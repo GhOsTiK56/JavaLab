@@ -1,2 +1,1 @@
-# JavaLab1
- 
+# This is Java!)

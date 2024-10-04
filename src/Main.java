@@ -2,24 +2,35 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int x, y;
-        Scanner in = new Scanner(System.in);
+        int rows = 0, cols = 0, n = 0;
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Задание 1. Введите числа x и y: ");
-        one one = new one();
-        x = in.nextInt();
-        y = in.nextInt();
-        one.solve1(x, y);
+        OneTest oneTest = new OneTest();
+        System.out.println("Первое задание: " + "\n");
+        oneTest.SolveMas();
+        oneTest.ReplaceMaxMin();
+        oneTest.CreateReciprocalFraction();
 
-        System.out.println("Задание 2. Введите числа x и y: ");
-        two two = new two();
-        x = in.nextInt();
-        y = in.nextInt();
-        two.solve2(x, y);
 
-        System.out.println("Задание 3. Введите x: ");
-        tree tree = new tree();
-        x = in.nextInt();
-        tree.solve3(x);
+        System.out.println("Второе задание: " + "\n");
+        TwoTest twoTest = new TwoTest();
+        twoTest.NumberInMas();
+        twoTest.RewriteMas();
+
+        System.out.println("Третье задание: " + "\n");
+        TreeTest treeTest = new TreeTest();
+        System.out.println("Введите кол-во строк и столбцов: ");
+        rows = scanner.nextInt();
+        cols = scanner.nextInt();
+        treeTest.Treetest(rows, cols);
+        treeTest.RandMatrix();
+        treeTest.ReplaceMatrix();
+
+        System.out.println("Четвертое задание: " + "\n");
+        FourTest fourTest = new FourTest();
+        System.out.println("Введите размер квадратной матрицы n: ");
+        n = scanner.nextInt();
+        fourTest.FourTest(n);
+        fourTest.Matrix();
     }
 }
