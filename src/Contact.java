@@ -5,11 +5,9 @@ class Contact {
     private String dateTime; // Дата и время
     private int type; // Тип заказа (1 - срочный, 2 - обычный заказ)
 
-    // Конструктор по умолчанию
     public Contact() {
     }
 
-    // Конструктор с параметрами
     public Contact(int id, String name, String courier, String dateTime, int type) {
         this.id = id;
         this.name = name;
@@ -18,7 +16,6 @@ class Contact {
         this.type = type;
     }
 
-    // Геттеры и сеттеры для полей
     public int getId() {
         return id;
     }
@@ -59,7 +56,6 @@ class Contact {
         this.type = type;
     }
 
-    // Переопределение метода toString для вывода информации об объекте
     @Override
     public String toString() {
         return String.format("Contact {id=%d, name='%s', courier='%s', dateTime='%s', type=%d}",
