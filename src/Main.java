@@ -1,36 +1,30 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        int rows = 0, cols = 0, n = 0;
-        Scanner scanner = new Scanner(System.in);
+        // Создаем несколько объектов Contact
+        Contact contact1 = new Contact(1, "Laptop", "Courier A", "2024-10-06 10:00", 1);
+        Contact contact2 = new Contact(2, "Smartphone", "Courier B", "2024-10-07 11:00", 2);
+        Contact contact3 = new Contact(3, "Tablet", "Courier A", "2024-10-08 12:00", 1);
 
-        OneTest oneTest = new OneTest();
-        System.out.println("Первое задание: " + "\n");
-        oneTest.SolveMas();
-        oneTest.ReplaceMaxMin();
-        oneTest.CreateReciprocalFraction();
+        // Создаем объект GroupContact и добавляем в него контакты
+        GroupContact groupContact = new GroupContact();
+        groupContact.setUniqueId(101);
+        groupContact.addContact(contact1);
+        groupContact.addContact(contact2);
+        groupContact.addContact(contact3);
 
 
-        System.out.println("Второе задание: " + "\n");
-        TwoTest twoTest = new TwoTest();
-        twoTest.NumberInMas();
-        twoTest.RewriteMas();
+// Выводим информацию о группе до сортировки
+        System.out.println("Before sorting:");
+        System.out.println(groupContact);
 
-        System.out.println("Третье задание: " + "\n");
-        TreeTest treeTest = new TreeTest();
-        System.out.println("Введите кол-во строк и столбцов: ");
-        rows = scanner.nextInt();
-        cols = scanner.nextInt();
-        treeTest.Treetest(rows, cols);
-        treeTest.RandMatrix();
-        treeTest.ReplaceMatrix();
+        // Сортируем контакты по имени и выводим информацию после сортировки
+        groupContact.sortContactsByName();
+        System.out.println("After sorting by name:");
+        System.out.println(groupContact);
 
-        System.out.println("Четвертое задание: " + "\n");
-        FourTest fourTest = new FourTest();
-        System.out.println("Введите размер квадратной матрицы n: ");
-        n = scanner.nextInt();
-        fourTest.FourTest(n);
-        fourTest.Matrix();
+        // Удаляем контакт по идентификатору и выводим информацию после удаления
+        groupContact.removeContactById(2);
+        System.out.println("After removing contact with ID 2:");
+        System.out.println(groupContact);
     }
 }
