@@ -42,9 +42,13 @@ class GroupContact {
         contacts.sort(Comparator.comparing(Contact::getName));
     }
 
+    public void sortContactsByType(){
+        contacts.sort(Comparator.comparingInt(Contact::getType));
+    }
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("GroupContact {uniqueId=" + uniqueId + ", contacts=\n");
+        StringBuilder sb = new StringBuilder("Группа контактов { \n");
         for (Contact contact : contacts) {
             sb.append("  ").append(contact).append("\n");
         }

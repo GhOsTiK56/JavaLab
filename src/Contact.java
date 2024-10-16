@@ -58,7 +58,7 @@ class Contact {
 
     @Override
     public String toString() {
-        return String.format("Contact {id=%d, name='%s', courier='%s', dateTime='%s', type=%d}",
+        return String.format("Контакт {ID = %d, Название = '%s', Курьер = '%s', Время доставки = '%s', Срочность = %d}",
                 id, name, courier, dateTime, type);
     }
 }
